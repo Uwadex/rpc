@@ -39,5 +39,6 @@ int main(int argc,char* argv[])
     rpcprovider.NotifyService(new UserService());
     //启动rpc服务
     rpcprovider.Run();
+    std::cout << "UserService is running..." << std::endl;
     return 0;
 }

@@ -1,9 +1,10 @@
 #pragma once
-
+#include "mprpcconfig.h"
 class MprpcApplication
 {
 private:
     MprpcApplication();
+    static MprpcConfig _mprpcConfig;
 public:
     MprpcApplication(const MprpcApplication&) = delete;
     MprpcApplication& operator=(const MprpcApplication&) = delete;
