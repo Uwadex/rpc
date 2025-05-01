@@ -1,0 +1,25 @@
+syntax = "proto3";//声明了protobuf的版本为3
+
+package fixbug;//声明了代码所在的包
+option cc_generic_services = true;
+message ResultCode
+{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+//定义登录消息类型 name password 
+message LoginRequest{
+    bytes name = 1;
+    bytes pwd = 2;
+}
+
+//定义登录响应消息类型
+message LoginResponse{
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+service UserService{
+    //登录
+    rpc Login(LoginRequest) returns (LoginResponse);
+}

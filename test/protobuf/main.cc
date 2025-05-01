@@ -4,22 +4,18 @@
 using namespace fixbug;
 int main()
 {
-    LoginRequest req;
-    req.set_name("zhang san");
-    req.set_pwd("123456");
-    std::string send_str;
-    // 对象数据序列化成一个char* 也就是字符串
-    if(req.SerializeToString(&send_str))
-    {
-        std::cout <<  send_str.c_str() << std::endl;
-    }
-    //send_str 反序列化成一个login请求对象
-    LoginRequest req2;
-    if(req2.ParseFromString(send_str))
-    {
-        std::cout << "name: " << req2.name() << std::endl;
-        std::cout << "pwd: " << req2.pwd() << std::endl;
-    }
-
+    GetFriendListResponse response;
+    ResultCode* result = response.mutable_result();
+    result->set_errcode(0);
+    result->set_errmsg("ok");
+    User* user = response.add_friend_list();
+    user->set_name("zhangsan");
+    user->set_age(18);
+    user->set_sex(User::MAN);
+    User* user2 = response.add_friend_list();
+    user2->set_name("lisi");
+    user2->set_age(20);
+    user2->set_sex(User::WOMEN);
+    std::cout << response.friend_list_size() << std::endl;
     return 0;
 }
