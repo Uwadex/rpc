@@ -17,6 +17,22 @@ unordered_map
 ../src/include/rpcprovider.h
 google/protobuf/service.h
 ../src/include/google/protobuf/service.h
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+muduo/net/InetAddress.h
+-
+muduo/net/Buffer.h
+-
+muduo/net/TcpConnection.h
+-
+muduo/base/Timestamp.h
+-
+string
+-
+mprpcapplication.h
+../src/include/mprpcapplication.h
 
 /home/hy/Documents/Mprpc/example/callee/userservice.cc
 iostream

@@ -11,5 +11,6 @@ public:
     MprpcApplication(const MprpcApplication&&) = delete;
     MprpcApplication& operator=(const MprpcApplication&&) = delete;
     static MprpcApplication& Getinstance();
+    static MprpcConfig& Getconfig();
     static void init(int argc, char** argv);
 };

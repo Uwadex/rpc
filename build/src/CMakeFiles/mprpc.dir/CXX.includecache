@@ -6,17 +6,45 @@
 
 #IncludeRegexTransform: 
 
+../src/include/mprpcapplication.h
+mprpcconfig.h
+../src/include/mprpcconfig.h
+
 ../src/include/mprpcconfig.h
 unordered_map
 -
 
-/home/hy/Documents/Mprpc/src/mprpcconfig.cc
-mprpcconfig.h
-/home/hy/Documents/Mprpc/src/mprpcconfig.h
+../src/include/rpcprovider.h
+google/protobuf/service.h
+../src/include/google/protobuf/service.h
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+muduo/net/InetAddress.h
+-
+muduo/net/Buffer.h
+-
+muduo/net/TcpConnection.h
+-
+muduo/base/Timestamp.h
+-
+string
+-
+mprpcapplication.h
+../src/include/mprpcapplication.h
+
+/home/hy/Documents/Mprpc/src/mprpcapplication.cc
+mprpcapplication.h
+/home/hy/Documents/Mprpc/src/mprpcapplication.h
+unistd.h
+-
 iostream
 -
-fstream
+string
 -
-sstream
--
+
+/home/hy/Documents/Mprpc/src/rpcprovider.cc
+rpcprovider.h
+/home/hy/Documents/Mprpc/src/rpcprovider.h
 

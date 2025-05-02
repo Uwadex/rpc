@@ -125,32 +125,32 @@ mprpc/fast:
 	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
 .PHONY : mprpc/fast
 
-mprpcapplication.o: mprpcapplication.cpp.o
+mprpcapplication.o: mprpcapplication.cc.o
 
 .PHONY : mprpcapplication.o
 
 # target to build an object file
-mprpcapplication.cpp.o:
-	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cpp.o
-.PHONY : mprpcapplication.cpp.o
+mprpcapplication.cc.o:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cc.o
+.PHONY : mprpcapplication.cc.o
 
-mprpcapplication.i: mprpcapplication.cpp.i
+mprpcapplication.i: mprpcapplication.cc.i
 
 .PHONY : mprpcapplication.i
 
 # target to preprocess a source file
-mprpcapplication.cpp.i:
-	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cpp.i
-.PHONY : mprpcapplication.cpp.i
+mprpcapplication.cc.i:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cc.i
+.PHONY : mprpcapplication.cc.i
 
-mprpcapplication.s: mprpcapplication.cpp.s
+mprpcapplication.s: mprpcapplication.cc.s
 
 .PHONY : mprpcapplication.s
 
 # target to generate assembly for a file
-mprpcapplication.cpp.s:
-	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cpp.s
-.PHONY : mprpcapplication.cpp.s
+mprpcapplication.cc.s:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cc.s
+.PHONY : mprpcapplication.cc.s
 
 mprpcconfig.o: mprpcconfig.cc.o
 
@@ -179,32 +179,32 @@ mprpcconfig.cc.s:
 	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcconfig.cc.s
 .PHONY : mprpcconfig.cc.s
 
-rpcprovider.o: rpcprovider.cpp.o
+rpcprovider.o: rpcprovider.cc.o
 
 .PHONY : rpcprovider.o
 
 # target to build an object file
-rpcprovider.cpp.o:
-	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cpp.o
-.PHONY : rpcprovider.cpp.o
+rpcprovider.cc.o:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cc.o
+.PHONY : rpcprovider.cc.o
 
-rpcprovider.i: rpcprovider.cpp.i
+rpcprovider.i: rpcprovider.cc.i
 
 .PHONY : rpcprovider.i
 
 # target to preprocess a source file
-rpcprovider.cpp.i:
-	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cpp.i
-.PHONY : rpcprovider.cpp.i
+rpcprovider.cc.i:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cc.i
+.PHONY : rpcprovider.cc.i
 
-rpcprovider.s: rpcprovider.cpp.s
+rpcprovider.s: rpcprovider.cc.s
 
 .PHONY : rpcprovider.s
 
 # target to generate assembly for a file
-rpcprovider.cpp.s:
-	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cpp.s
-.PHONY : rpcprovider.cpp.s
+rpcprovider.cc.s:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/rpcprovider.cc.s
+.PHONY : rpcprovider.cc.s
 
 # Help Target
 help:
