@@ -1,0 +1,10 @@
+syntax = "proto3";//声明了protobuf的版本为3
+
+package fixbug;//声明了代码所在的包
+
+message header
+{
+    bytes serviceName = 1;
+    bytes methodName = 2;
+    uint32 args_size = 3;
+}

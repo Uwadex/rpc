@@ -24,4 +24,6 @@ private:
         std::unordered_map<std::string, const google::protobuf::MethodDescriptor*> _methodMap; //方法名和方法描述符的映射关系
     };
     std::unordered_map<std::string, ServiceInfo> _serviceMap; //服务名和服务对象的映射关系
+    // 对应的done回调函数
+    void SendRpcResponse(const muduo::net::TcpConnectionPtr& conn,google::protobuf::Message* response);
 };
