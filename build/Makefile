@@ -136,6 +136,19 @@ provider/fast:
 	$(MAKE) -f example/callee/CMakeFiles/provider.dir/build.make example/callee/CMakeFiles/provider.dir/build
 .PHONY : provider/fast
 
+#=============================================================================
+# Target rules for targets named coumser
+
+# Build rule for target.
+coumser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 coumser
+.PHONY : coumser
+
+# fast build rule for target.
+coumser/fast:
+	$(MAKE) -f example/caller/CMakeFiles/coumser.dir/build.make example/caller/CMakeFiles/coumser.dir/build
+.PHONY : coumser/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +159,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... mprpc"
 	@echo "... provider"
+	@echo "... coumser"
 .PHONY : help
 
 

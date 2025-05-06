@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <string>
 #include "mprpcapplication.h"
+#include "logger.h"
 class RpcProvider
 {
 public:

@@ -15,7 +15,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         std::string headbuf = head.SerializeAsString();
         std::string argsbuf = request->SerializeAsString();
         char sendbuf[4 + headbuf.size() + argsbuf.size()];
-        *((int32_t*)sendbuf) = headbuf.size()+argsbuf.size();
+        *((int32_t*)sendbuf) = headbuf.size();
         memmove(sendbuf + 4, headbuf.c_str(), headbuf.size());
         memmove(sendbuf + 4 + headbuf.size(), argsbuf.c_str(), argsbuf.size());
         //进行网络通信
@@ -39,6 +39,7 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
             close(client_fd);
             return;
         }
+   
         if(send(client_fd,sendbuf,sizeof(sendbuf),0) == -1)
         {
             std::cout << "send error!" << std::endl;

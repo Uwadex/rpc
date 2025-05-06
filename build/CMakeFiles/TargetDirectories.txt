@@ -8,3 +8,6 @@
 /home/hy/Documents/Mprpc/build/example/callee/CMakeFiles/rebuild_cache.dir
 /home/hy/Documents/Mprpc/build/example/callee/CMakeFiles/edit_cache.dir
 /home/hy/Documents/Mprpc/build/example/callee/CMakeFiles/provider.dir
+/home/hy/Documents/Mprpc/build/example/caller/CMakeFiles/rebuild_cache.dir
+/home/hy/Documents/Mprpc/build/example/caller/CMakeFiles/edit_cache.dir
+/home/hy/Documents/Mprpc/build/example/caller/CMakeFiles/coumser.dir

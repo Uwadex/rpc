@@ -12,6 +12,7 @@
 #include "mprpcapplication.h"
 #include <arpa/inet.h>
 #include <unistd.h>
+#include "logger.h"
 class MprpcChannel:public google::protobuf::RpcChannel
 {
 public:

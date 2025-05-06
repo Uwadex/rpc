@@ -7,7 +7,7 @@ void RpcProvider::NotifyService(google::protobuf::Service* service)
 {
     //获取服务名 先获取对整个服务的描述 serviceName=>UserService  
     const google::protobuf::ServiceDescriptor* serviceDesc = service->GetDescriptor();
-    std::string serviceName = serviceDesc->name();
+    std::string serviceName = serviceDesc->full_name();
     //然后是具体的描述的每一个rpc方法的描述 methodName =>Login 
     for(int i = 0 ;i < serviceDesc->method_count(); ++i)
     {
@@ -25,9 +25,10 @@ void RpcProvider::Run()
 {
     //获取配置文件中的ip和port
     std::string ip = MprpcApplication::Getconfig().Load("rpcserverip");
-    uint16_t port = std::stoi(MprpcApplication::Getconfig().Load("rpcserverport"));
+    int32_t port = std::stoi(MprpcApplication::Getconfig().Load("rpcserverport"));
     //创建rpc服务端对象
     muduo::net::InetAddress addr(ip, port);
+    Logger::GetInstance().Info_Log("rpc server start!");
     muduo::net::TcpServer server(&_eventloop,addr,"RpcProvider");
     //设置回调函数
     //处理连接断开的的情况即可 释放套接字资源
@@ -48,28 +49,30 @@ void RpcProvider::Run()
         muduo::Timestamp time)
     {
         std::string msg = buffer->retrieveAllAsString();//获取buffer中的所有信息
+        std::cout << msg << std::endl;
         int32_t header_size = *((int32_t*)(msg.c_str()));//获取前4个字节的存储的值
         fixbug::header head;
-        std::string headbuf = msg.substr(sizeof(int32_t), header_size);
+        std::string headbuf = msg.substr(4, header_size);
         //反序列化得到header信息
         if(!head.ParseFromString(headbuf))
         {
-            std::cout << "head parse error!" << std::endl;
+            Logger::GetInstance().Error_Log("header parse error!");
             return;
         }
-        std::string argsbuf = msg.substr(sizeof(int32_t) + header_size, head.args_size());
+
+        std::string argsbuf = msg.substr(4 + header_size, head.args_size());
         std::string serviceName = head.servicename();
         std::string methodName = head.methodname();
         //检查map映射表中是否有对应的serviceName和methodName
         if(!_serviceMap.count(serviceName))
         {
-            std::cout << "service is not exist!" << std::endl;
+            Logger::GetInstance().Error_Log("service is not exist!");
             return;
         }
         auto it  = _serviceMap[serviceName];
         if(it._methodMap.count(methodName) == 0)
         {
-            std::cout << "method is not exist!" << std::endl;
+            Logger::GetInstance().Error_Log("method is not exist!");
             return;
         }
         auto mit = it._methodMap[methodName];
@@ -80,7 +83,7 @@ void RpcProvider::Run()
         //反序列化args信息
         if(!request->ParseFromString(argsbuf))
         {
-            std::cout << "args parse error!" << std::endl;
+            Logger::GetInstance().Error_Log("args parse error!");
             return;
         }
         //生成done对象 来进行response的反馈
@@ -104,7 +107,7 @@ void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn,googl
     }   
     else 
     {
-        std::cout << "response serialize error!" << std::endl;
+        Logger::GetInstance().Error_Log("response serialize error!");
     }
     conn->shutdown();
 }

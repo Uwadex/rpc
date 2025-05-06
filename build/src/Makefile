@@ -125,6 +125,60 @@ mprpc/fast:
 	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/build
 .PHONY : mprpc/fast
 
+header.pb.o: header.pb.cc.o
+
+.PHONY : header.pb.o
+
+# target to build an object file
+header.pb.cc.o:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/header.pb.cc.o
+.PHONY : header.pb.cc.o
+
+header.pb.i: header.pb.cc.i
+
+.PHONY : header.pb.i
+
+# target to preprocess a source file
+header.pb.cc.i:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/header.pb.cc.i
+.PHONY : header.pb.cc.i
+
+header.pb.s: header.pb.cc.s
+
+.PHONY : header.pb.s
+
+# target to generate assembly for a file
+header.pb.cc.s:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/header.pb.cc.s
+.PHONY : header.pb.cc.s
+
+logger.o: logger.cc.o
+
+.PHONY : logger.o
+
+# target to build an object file
+logger.cc.o:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/logger.cc.o
+.PHONY : logger.cc.o
+
+logger.i: logger.cc.i
+
+.PHONY : logger.i
+
+# target to preprocess a source file
+logger.cc.i:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/logger.cc.i
+.PHONY : logger.cc.i
+
+logger.s: logger.cc.s
+
+.PHONY : logger.s
+
+# target to generate assembly for a file
+logger.cc.s:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/logger.cc.s
+.PHONY : logger.cc.s
+
 mprpcapplication.o: mprpcapplication.cc.o
 
 .PHONY : mprpcapplication.o
@@ -151,6 +205,33 @@ mprpcapplication.s: mprpcapplication.cc.s
 mprpcapplication.cc.s:
 	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcapplication.cc.s
 .PHONY : mprpcapplication.cc.s
+
+mprpcchannel.o: mprpcchannel.cpp.o
+
+.PHONY : mprpcchannel.o
+
+# target to build an object file
+mprpcchannel.cpp.o:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcchannel.cpp.o
+.PHONY : mprpcchannel.cpp.o
+
+mprpcchannel.i: mprpcchannel.cpp.i
+
+.PHONY : mprpcchannel.i
+
+# target to preprocess a source file
+mprpcchannel.cpp.i:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcchannel.cpp.i
+.PHONY : mprpcchannel.cpp.i
+
+mprpcchannel.s: mprpcchannel.cpp.s
+
+.PHONY : mprpcchannel.s
+
+# target to generate assembly for a file
+mprpcchannel.cpp.s:
+	cd /home/hy/Documents/Mprpc/build && $(MAKE) -f src/CMakeFiles/mprpc.dir/build.make src/CMakeFiles/mprpc.dir/mprpcchannel.cpp.s
+.PHONY : mprpcchannel.cpp.s
 
 mprpcconfig.o: mprpcconfig.cc.o
 
@@ -215,9 +296,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mprpc"
+	@echo "... header.pb.o"
+	@echo "... header.pb.i"
+	@echo "... header.pb.s"
+	@echo "... logger.o"
+	@echo "... logger.i"
+	@echo "... logger.s"
 	@echo "... mprpcapplication.o"
 	@echo "... mprpcapplication.i"
 	@echo "... mprpcapplication.s"
+	@echo "... mprpcchannel.o"
+	@echo "... mprpcchannel.i"
+	@echo "... mprpcchannel.s"
 	@echo "... mprpcconfig.o"
 	@echo "... mprpcconfig.i"
 	@echo "... mprpcconfig.s"

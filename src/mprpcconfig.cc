@@ -9,7 +9,7 @@ void MprpcConfig::LoadConfig(const char* configfile)
     std::fstream pf(configfile);
     if (!pf.is_open())
     {
-        std::cout << configfile << " is not exist!" << std::endl;
+        Logger::GetInstance().Error_Log("open config file error!");
         exit(EXIT_FAILURE);
     }
     std::stringstream configStream;
@@ -39,7 +39,7 @@ std::string MprpcConfig::Load(const std::string& key)
 {
     if(_configMap.count(key) == 0)
     {
-        std::cout << key << " is not exist!" << std::endl;
+        Logger::GetInstance().Error_Log("key is not exist!");
         return "";
     }
     return _configMap[key];
