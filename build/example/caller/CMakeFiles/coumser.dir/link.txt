@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/coumser.dir/usercoumser.cc.o CMakeFiles/coumser.dir/__/user.pb.cc.o  -o ../../../bin/coumser   -L/home/hy/Documents/Mprpc/lib  -Wl,-rpath,/home/hy/Documents/Mprpc/lib ../../../lib/libmprpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 
+/usr/bin/c++    -rdynamic CMakeFiles/coumser.dir/usercoumser.cc.o CMakeFiles/coumser.dir/__/user.pb.cc.o  -o ../../../bin/coumser   -L/home/hy/Documents/Mprpc/lib  -Wl,-rpath,/home/hy/Documents/Mprpc/lib ../../../lib/libmprpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt 

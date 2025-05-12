@@ -1,4 +1,5 @@
 #include "mprpcchannel.h"
+#include "zookeeperutil.h"
 //重写RpcChannel的CallMethod方法
 void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     google::protobuf::RpcController* controller, const google::protobuf::Message* request,
@@ -25,9 +26,21 @@ void MprpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
             std::cout << "socket error!" << std::endl;
             return;
         }
-        //获取config配置项
-        std::string ip = MprpcApplication::Getconfig().Load("rpcserverip");
-        std::string port = MprpcApplication::Getconfig().Load("rpcserverport");
+        //从zook中获取ip和port
+        ZkClient zkclient;
+        zkclient.Start();
+        std::string path = "/"+ service_name + "/" + method_name;
+        std::string msg = zkclient.GetNodeData(path);
+        if(msg.empty())
+        {
+            Logger::GetInstance().Error_Log("get node data error!");
+            close(client_fd);
+            return;
+        }
+        int idx = msg.find(":");
+        std::string ip = msg.substr(0,idx);
+        std::string port = msg.substr(idx + 1);
+        std::cout << "ip:" << ip << " port:" << port << std::endl;
         struct sockaddr_in server_addr;
         memset(&server_addr,0,sizeof(server_addr));
         server_addr.sin_family = AF_INET;

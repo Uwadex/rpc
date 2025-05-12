@@ -26,8 +26,6 @@ int main(int argc,char* argv[])
     {
         std::cout << "Login failed!" << std::endl;
     }
-    Logger::GetInstance().Info_Log("Login success!");
-    Logger::GetInstance().Error_Log("Login failed!");
 
     return 0;
 }

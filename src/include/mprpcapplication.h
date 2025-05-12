@@ -1,6 +1,9 @@
 #pragma once
 #include "mprpcconfig.h"
 #include "logger.h"
+#include "header.pb.h"
+#include "rpcprovider.h"
+#include "mprpcconfig.h"
 class MprpcApplication
 {
 private:

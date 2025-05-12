@@ -2,6 +2,7 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/stubs/callback.h>
 #include "header.pb.h"
+#include "zookeeperutil.h"
 // 创建新的rpc服务 
 void RpcProvider::NotifyService(google::protobuf::Service* service)
 {
@@ -19,6 +20,21 @@ void RpcProvider::NotifyService(google::protobuf::Service* service)
     }
     //存下来服务对象
     _serviceMap[serviceName]._service = service;
+    //像zookeeper中注册服务
+    serviceName = "/" + serviceName;
+    ZkClient zkclient;
+    zkclient.Start();
+    //创建父目录
+    zkclient.CreateNode(serviceName,nullptr,0);
+    for(int i = 0 ;i < serviceDesc->method_count(); ++i)
+    {
+        const google::protobuf::MethodDescriptor* methodDesc = serviceDesc->method(i);
+        std::string methodName = methodDesc->name();
+        methodName = serviceName + "/" + methodName;
+        //存储信息的格式为ip:port
+        std::string msg = MprpcApplication::Getconfig().Load("rpcserverip") + ":" + MprpcApplication::Getconfig().Load("rpcserverport");
+        zkclient.CreateNode(methodName,msg.c_str(),msg.size());
+    }
 }
 ///启动rpc服务
 void RpcProvider::Run()
